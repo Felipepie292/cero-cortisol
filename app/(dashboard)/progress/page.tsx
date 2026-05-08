@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 
 const photos = [
   {
@@ -50,13 +49,11 @@ export default function ProgressPage() {
         {/* Photos — stacked */}
         {photos.map((photo, i) => (
           <div key={i} className="card overflow-hidden">
-            <div className="relative w-full" style={{ height: 220 }}>
-              <Image
+            <div className="flex justify-center" style={{ background: 'var(--surface-2)' }}>
+              <img
                 src={photo.src}
                 alt={photo.label}
-                fill
-                className="object-cover object-top"
-                sizes="430px"
+                style={{ width: '60%', height: 'auto', display: 'block' }}
               />
             </div>
             <div className="p-3">

@@ -1,38 +1,86 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg: #F4F8F6;
-  --surface: #FFFFFF;
-  --surface-2: #EEF6F1;
-  --surface-3: #E6F2EC;
+  /* ── Surfaces — warm cream ── */
+  --bg:        #EDE6D6;
+  --surface:   #F6F1E5;
+  --surface-2: #E6DEC9;
+  --surface-3: #DDD3BB;
 
-  --primary: #10B981;
-  --primary-dark: #059669;
-  --primary-light: #D1FAE5;
+  /* ── Sage (primary brand) ── */
+  --primary:       #5C7464;
+  --primary-dark:  #3F5246;
+  --primary-light: #E4EBDF;
 
-  --blue: #0EA5E9;
-  --blue-dark: #0284C7;
-  --blue-light: #E0F2FE;
+  /* ── Clay (water / blue) ── */
+  --blue:       #6E8694;
+  --blue-dark:  #4A6270;
+  --blue-light: #ECF1F3;
 
-  --violet: #8B5CF6;
-  --violet-light: #EDE9FE;
+  /* ── Plum (sleep / violet) ── */
+  --violet:       #6E5C7B;
+  --violet-light: #EDE8F0;
 
-  --orange: #F59E0B;
-  --orange-light: #FEF3C7;
+  /* ── Ochre (energy / orange) ── */
+  --orange:       #B8924A;
+  --orange-light: #F7EFDC;
 
-  --rose: #F43F5E;
-  --rose-light: #FFE4E6;
+  /* ── Terracotta (accent / rose) ── */
+  --rose:       #B8634A;
+  --rose-light: #F2D9CB;
 
-  --text: #0D1F1A;
-  --text-muted: #5C6F6A;
-  --text-light: #9AB0A9;
+  /* ── Typography ── */
+  --text:       #2C2A24;
+  --text-muted: #6F6A5E;
+  --text-light: #9B9587;
 
-  --border: #DDE8E3;
-  --border-light: #EEF3F1;
+  /* ── Borders ── */
+  --border:       #D4CBB8;
+  --border-light: #E2D9C5;
 
-  --shadow-sm: 0 1px 4px rgba(16, 185, 129, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 16px rgba(16, 185, 129, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 8px 32px rgba(16, 185, 129, 0.10), 0 4px 12px rgba(0, 0, 0, 0.06);
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(60,50,30,0.04), 0 1px 1px rgba(60,50,30,0.03);
+  --shadow-md: 0 4px 12px rgba(60,50,30,0.06), 0 2px 4px rgba(60,50,30,0.04);
+  --shadow-lg: 0 14px 40px rgba(60,50,30,0.10), 0 4px 12px rgba(60,50,30,0.05);
+
+  /* ── Extended palette (sage) ── */
+  --sage-12: #2C3A30;
+  --sage-11: #3F5246;
+  --sage-9:  #5C7464;
+  --sage-7:  #889E8E;
+  --sage-5:  #B8C7BB;
+  --sage-3:  #D4DECF;
+  --sage-2:  #E4EBDF;
+
+  /* ── Extended palette (terracotta) ── */
+  --terra-11: #6B3624;
+  --terra-9:  #B8634A;
+  --terra-7:  #D08A6F;
+  --terra-5:  #E8C0AD;
+  --terra-3:  #F2D9CB;
+  --terra-2:  #F7E8DD;
+
+  /* ── Extended palette (clay) ── */
+  --clay-9:  #6E8694;
+  --clay-7:  #94A8B3;
+  --clay-5:  #BBC9D1;
+  --clay-3:  #DCE4E8;
+  --clay-2:  #ECF1F3;
+
+  /* ── Extended palette (plum) ── */
+  --plum-9:  #6E5C7B;
+  --plum-7:  #9085A0;
+  --plum-5:  #C2B8C9;
+  --plum-3:  #DFD8E3;
+  --plum-2:  #EDE8F0;
+
+  /* ── Extended palette (ochre) ── */
+  --ochre-9:  #B8924A;
+  --ochre-7:  #D4B27A;
+  --ochre-5:  #E8D2A8;
+  --ochre-3:  #F1E4C9;
+  --ochre-2:  #F7EFDC;
 }
 
 * {
@@ -48,7 +96,9 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.005em;
   max-width: 430px;
   margin: 0 auto;
   min-height: 100dvh;
@@ -60,9 +110,9 @@ body {
 
 .card {
   background: var(--surface);
-  border-radius: 20px;
-  box-shadow: var(--shadow-sm);
+  border-radius: 22px;
   border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-primary {

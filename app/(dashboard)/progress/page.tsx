@@ -6,19 +6,15 @@ const photos = [
   {
     src: '/depois.jpg',
     label: 'Actual',
-    date: '8 de mayo, 2025',
-    week: 'Semana del 5 de mayo',
+    date: '8 de mayo, 2026',
     note: 'Me siento con más energía. El vientre está más plano y duermo mucho mejor.',
-    tag: 'Después',
     tagColor: { bg: 'var(--sage-2)', text: 'var(--sage-11)' },
   },
   {
     src: '/antes.jpg',
     label: 'Inicio',
-    date: '1 de abril, 2025',
-    week: 'Semana del 31 de marzo',
+    date: '1 de abril, 2026',
     note: 'Primer registro. Me sentía muy hinchada y con poca energía durante el día.',
-    tag: 'Antes',
     tagColor: { bg: 'var(--terra-2)', text: 'var(--terra-11)' },
   },
 ]
@@ -40,7 +36,7 @@ export default function ProgressPage() {
           {[
             { v: '6', u: 'semanas', l: 'registrando' },
             { v: '2',  u: 'fotos',   l: 'archivadas' },
-            { v: '−1,5', u: 'kg',   l: 'esta semana' },
+            { v: '−1,5', u: 'kg',  l: 'esta semana' },
           ].map((s, i) => (
             <div key={i} style={{ borderRight: i < 2 ? '1px solid var(--border-light)' : 'none' }}>
               <p className="text-lg font-medium" style={{ color: 'var(--text)', letterSpacing: '-0.02em' }}>
@@ -54,7 +50,7 @@ export default function ProgressPage() {
         {/* Photos — stacked */}
         {photos.map((photo, i) => (
           <div key={i} className="card overflow-hidden">
-            <div className="relative w-full" style={{ aspectRatio: '3/4' }}>
+            <div className="relative w-full" style={{ height: 220 }}>
               <Image
                 src={photo.src}
                 alt={photo.label}
@@ -62,21 +58,14 @@ export default function ProgressPage() {
                 className="object-cover object-top"
                 sizes="430px"
               />
-              {/* top badge */}
-              <div className="absolute top-3 left-3">
-                <span className="text-xs font-bold px-3 py-1 rounded-full"
-                  style={{ background: photo.tagColor.bg, color: photo.tagColor.text }}>
-                  {photo.tag}
-                </span>
-              </div>
             </div>
-            <div className="p-4">
-              <div className="flex items-center justify-between mb-2">
+            <div className="p-3">
+              <div className="flex items-center justify-between mb-1">
                 <p className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>{photo.date}</p>
                 <span className="text-xs font-semibold px-2 py-0.5 rounded-full"
                   style={{ background: photo.tagColor.bg, color: photo.tagColor.text }}>{photo.label}</span>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>{photo.note}</p>
+              <p className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>{photo.note}</p>
             </div>
           </div>
         ))}
